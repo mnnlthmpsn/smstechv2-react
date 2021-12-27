@@ -31,7 +31,7 @@ const TopSellingProduct = () => {
                             {
                                 products.map(product => (
                                     <div className="col-6 col-md-3" key={product.id}>
-                                        <ItemCard />
+                                        <ItemCard product={product}/>
                                     </div>
                                 ))
                             }
