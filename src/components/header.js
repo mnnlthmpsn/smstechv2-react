@@ -86,7 +86,7 @@ const Header = () => {
                                 <nav className="side-nav">
                                     <ul className="menu-vertical sf-arrows">
                                         {categories.map(catg => (
-                                            <li key={catg?.attributes.slug}><Link to={`categories/${catg?.attributes.slug}`}>{catg?.attributes.title}</Link></li>
+                                            <li key={catg?.attributes.slug}><Link to={`categories/${catg?.attributes.slug}`} state={{ categoryName: catg?.attributes.title }}>{catg?.attributes.title}</Link></li>
                                         ))}
                                     </ul>
                                 </nav>
