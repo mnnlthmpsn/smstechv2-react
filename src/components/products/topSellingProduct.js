@@ -1,5 +1,4 @@
-import { useState } from "react"
-import { Fragment, useEffect } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { req_products } from "../../api/products"
 import ItemCard from "../cards/itemCard"
 

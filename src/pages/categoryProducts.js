@@ -1,5 +1,5 @@
 import { Link, useLocation, useParams } from "react-router-dom"
-import { useEffect, useState } from "react/cjs/react.development"
+import { useEffect, useState } from "react"
 import { req_category_products } from "../api/products"
 import ItemCard2 from "../components/cards/itemCard2"
 import Filter from "../components/filter"

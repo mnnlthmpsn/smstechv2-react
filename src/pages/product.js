@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
-import { Fragment, useContext, useEffect, useState } from "react/cjs/react.development"
+import { Fragment, useContext, useEffect, useState } from "react"
 import ImageGallery from "../components/imageGallery"
 import RelatedProducts from "../components/products/relatedProducts"
 import { CartContext } from "../contexts/cartContext"

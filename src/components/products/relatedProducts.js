@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react/cjs/react.development"
+import { useEffect, useState } from "react"
 import { req_category_products } from "../../api/products"
 import ItemCard2 from "../cards/itemCard2"
 
