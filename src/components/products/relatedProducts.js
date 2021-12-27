@@ -6,10 +6,14 @@ const RelatedProducts = ({ product }) => {
 
     const [products, setProducts] = useState([])
 
-    useEffect(async () => {
+    const getCategoryProducts = async () => {
         const { data } = await req_category_products(product?.attributes.category.data.attributes.slug)
         const filtered = data.filter(prod => prod && prod.id !== product?.id)
         setProducts(filtered)
+    }
+
+    useEffect(() => {
+        getCategoryProducts()
     }, [product])
 
     return (

@@ -1,8 +1,6 @@
 import axios from 'axios'
 import BASE_URL from './base'
 
-import * as qs from 'qs'
-
 // temporarily
 const _add_cart = async () => {
     try {

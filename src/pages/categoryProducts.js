@@ -11,9 +11,13 @@ const CategoryProducts = () => {
     const params = useParams()
     const { state } = useLocation()
 
-    useEffect(async () => {
+    const getCategoryProducts = async () => {
         const { data } = await req_category_products(params.cat_slug)
         setProducts(data)
+    }
+
+    useEffect(() => {
+        getCategoryProducts()
     }, [])
 
     return (
@@ -37,7 +41,7 @@ const CategoryProducts = () => {
                                     {
                                         products.map(product => (
                                             <div className="col-6 col-md-4 col-lg-4" key={product.id}>
-                                                <ItemCard2 product={product}/>
+                                                <ItemCard2 product={product} />
                                             </div>
                                         ))
                                     }

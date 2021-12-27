@@ -7,9 +7,13 @@ const Categories = () => {
 
     const [categories, setCategories] = useState([])
 
-    useEffect(async () => {
+    const getCategories = async () => {
         const { data } = await req_categories()
         setCategories(data)
+    }
+
+    useEffect(async () => {
+        getCategories()
     }, [])
 
     return (
