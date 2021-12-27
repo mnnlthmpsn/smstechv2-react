@@ -6,8 +6,8 @@ const SocialWidget = () => {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="cta-wrapper cta-text text-center">
-                                    <h3 className="cta-title">Shop Social</h3>
-                                    <p className="cta-desc">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. </p>
+                                    <h3 className="cta-title">Follow us on</h3>
+                                    <p className="cta-desc">Stay in touch with us through our Social Media handles</p>
                             
                                     <div className="social-icons social-icons-colored justify-content-center">
                                         <a href="#" className="social-icon social-facebook" title="Facebook" target="_blank"><i className="icon-facebook-f"></i></a>
@@ -21,8 +21,8 @@ const SocialWidget = () => {
 
                             <div className="col-lg-6">
                                 <div className="cta-wrapper text-center">
-                                    <h3 className="cta-title">Get the Latest Deals</h3>
-                                    <p className="cta-desc">and <br />receive <span className="text-primary">$20 coupon</span> for first shopping</p>
+                                    <h3 className="cta-title">Subscribe to Email</h3>
+                                    <p className="cta-desc">to receive <br />news of latest <span className="text-primary">Deals & Promotions</span></p>
                             
                                     <form action="#">
                                         <div className="input-group">

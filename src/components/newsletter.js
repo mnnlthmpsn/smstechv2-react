@@ -19,7 +19,7 @@ const NewsLetter = () => {
                             </form>
                             <div className="custom-control custom-checkbox">
                                 <input type="checkbox" className="custom-control-input" id="register-policy-2" required />
-                                <label className="custom-control-label" htmlFor="register-policy-2">Do not show this popup again</label>
+                                <label className="custom-control-label" label htmlFor="register-policy-2">Do not show this popup again</label>
                             </div>
                         </div>
                     </div>

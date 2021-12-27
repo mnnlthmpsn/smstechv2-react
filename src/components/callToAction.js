@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const CallToAction = () => {
     return (
         <div className="container">
@@ -7,13 +9,13 @@ const CallToAction = () => {
                             <div className="col-md-11 col-xl-11">
                                 <div className="cta-content">
                                     <div className="cta-heading">
-                                        <h3 className="cta-title text-right"><span className="text-primary">New Deals</span> <br />Start Daily at 12pm e.t.</h3>
+                                        <h3 className="cta-title text-right"><span className="text-primary">SMS Tech Solutions</span></h3>
                                     </div>
                                     
-                                    <div className="cta-text">
-                                        <p>Get <span className="text-dark font-weight-normal">FREE SHIPPING* & 5% rewards</span> on <br />every order with Molla Theme rewards program</p>
+                                    <div className="cta-text text-center">
+                                        <p>Browse our catalog for amazing deals and offers</p>
                                     </div>
-                                    <a href="#" className="btn btn-primary btn-round"><span>Add to Cart for $50.00/yr</span><i className="icon-long-arrow-right"></i></a>
+                                    <Link to='categories' className="btn btn-primary btn-round"><span>Shop Now</span><i className="icon-long-arrow-right"></i></Link>
                                 </div>
                             </div>
                         </div>

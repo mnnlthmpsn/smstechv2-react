@@ -1,8 +1,24 @@
+import { useContext } from "react"
+import { Link, useLocation } from "react-router-dom"
+import { CategoryContext } from "../contexts/categoryContext"
+import { AuthContext } from "../contexts/authContext"
 import CartWidget from "./cartWidget"
 import Search from "./search"
 import WishlistWidget from "./wishlistWidget"
 
 const Header = () => {
+
+    const { pathname } = useLocation()
+    const { categories } = useContext(CategoryContext)
+    const { isAuthenticated, logout } = useContext(AuthContext)
+
+    const navLinks = [
+        { path: '/', name: 'Home' },
+        { path: '/about', name: 'About' },
+        { path: '/services', name: 'Services' },
+        { path: '/contact', name: 'Contact' }
+    ]
+
     return (
         <header className="header header-intro-clearance header-3">
             <div className="header-top">
@@ -12,35 +28,14 @@ const Header = () => {
                     </div>
 
                     <div className="header-right">
-
                         <ul className="top-menu">
                             <li>
                                 <a href="#">Links</a>
                                 <ul>
-                                    <li>
-                                        <div className="header-dropdown">
-                                            <a href="#">USD</a>
-                                            <div className="header-menu">
-                                                <ul>
-                                                    <li><a href="#">Eur</a></li>
-                                                    <li><a href="#">Usd</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="header-dropdown">
-                                            <a href="#">English</a>
-                                            <div className="header-menu">
-                                                <ul>
-                                                    <li><a href="#">English</a></li>
-                                                    <li><a href="#">French</a></li>
-                                                    <li><a href="#">Spanish</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a></li>
+                                    {isAuthenticated
+                                        ? <li><span className="text-primary cursor" onClick={logout}>Logout</span></li>
+                                        : <li><a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a></li>
+                                    }
                                 </ul>
                             </li>
                         </ul>
@@ -57,21 +52,25 @@ const Header = () => {
                             <i className="icon-bars"></i>
                         </button>
 
-                        <a href="index.html" className="logo">
+                        <Link to="/" className="logo">
                             <img src="/assets/images/demos/demo-3/logo.png" alt="Molla Logo" width="105" height="25" />
-                        </a>
+                        </Link>
                     </div>
 
                     {/* search */}
                     <Search />
 
-                    <div className="header-right">
-                        {/* Wishlist */}
-                        <WishlistWidget />
+                    {
+                        isAuthenticated && (
+                            <div className="header-right">
+                                {/* Wishlist */}
+                                <WishlistWidget />
 
-                        {/* cart */}
-                        <CartWidget />
-                    </div>
+                                {/* cart */}
+                                <CartWidget />
+                            </div>
+                        )
+                    }
                 </div>
             </div>
 
@@ -86,8 +85,9 @@ const Header = () => {
                             <div className="dropdown-menu">
                                 <nav className="side-nav">
                                     <ul className="menu-vertical sf-arrows">
-                                        <li><a href="#">Beds</a></li>
-                                        <li><a href="#">Beds</a></li>
+                                        {categories.map(catg => (
+                                            <li key={catg?.attributes.slug}><Link to={`categories/${catg?.attributes.slug}`}>{catg?.attributes.title}</Link></li>
+                                        ))}
                                     </ul>
                                 </nav>
                             </div>
@@ -97,18 +97,13 @@ const Header = () => {
                     <div className="header-center">
                         <nav className="main-nav">
                             <ul className="menu sf-arrows">
-                                <li className="megamenu-container active">
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li className="megamenu-container">
-                                    <a href="index.html">About</a>
-                                </li>
-                                <li className="megamenu-container">
-                                    <a href="index.html">Services</a>
-                                </li>
-                                <li className="megamenu-container">
-                                    <a href="index.html">Contact</a>
-                                </li>
+                                {
+                                    navLinks.map(navLink => (
+                                        <li className={`megamenu-container ${pathname === navLink.path ? 'active' : undefined}`} key={navLink.path}>
+                                            <Link to={navLink.path}>{navLink.name}</Link>
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </nav>
                     </div>

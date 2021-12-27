@@ -22,7 +22,7 @@ const Checkout = () => {
             			<div className="checkout-discount">
             				<form action="#">
         						<input type="text" className="form-control" required id="checkout-discount-input" />
-            					<label for="checkout-discount-input" className="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
+            					<label htmlFor="checkout-discount-input" className="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
             				</form>
             			</div>
             			<form action="#">

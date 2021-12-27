@@ -14,7 +14,7 @@ const BannerSliders = () => {
                 <div className="intro-slide">
                     <figure className="slide-image">
                         <picture>
-                            <source media="(max-width: 480px)" srcset="/assets/images/demos/demo-3/slider/slide-1-480w.jpg" />
+                            <source media="(max-width: 480px)" srcSet="/assets/images/demos/demo-3/slider/slide-1-480w.jpg" />
                             <img src="/assets/images/demos/demo-3/slider/slide-1.jpg" alt="Image Desc" />
                         </picture>
                     </figure>
@@ -42,7 +42,7 @@ const BannerSliders = () => {
                 <div className="intro-slide">
                     <figure className="slide-image">
                         <picture>
-                            <source media="(max-width: 480px)" srcset="/assets/images/demos/demo-3/slider/slide-2-480w.jpg" />
+                            <source media="(max-width: 480px)" srcSet="/assets/images/demos/demo-3/slider/slide-2-480w.jpg" />
                             <img src="/assets/images/demos/demo-3/slider/slide-2.jpg" alt="Image Desc" />
                         </picture>
                     </figure>

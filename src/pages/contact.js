@@ -69,29 +69,29 @@ const Contact = () => {
                             <form action="#" className="contact-form mb-3">
                                 <div className="row">
                                     <div className="col-sm-6">
-                                        <label for="cname" className="sr-only">Name</label>
+                                        <label htmlFor="cname" className="sr-only">Name</label>
                                         <input type="text" className="form-control" id="cname" placeholder="Name *" required />
                                     </div>
 
                                     <div className="col-sm-6">
-                                        <label for="cemail" className="sr-only">Email</label>
+                                        <label htmlFor="cemail" className="sr-only">Email</label>
                                         <input type="email" className="form-control" id="cemail" placeholder="Email *" required />
                                     </div>
                                 </div>
 
                                 <div className="row">
                                     <div className="col-sm-6">
-                                        <label for="cphone" className="sr-only">Phone</label>
+                                        <label htmlFor="cphone" className="sr-only">Phone</label>
                                         <input type="tel" className="form-control" id="cphone" placeholder="Phone" />
                                     </div>
 
                                     <div className="col-sm-6">
-                                        <label for="csubject" className="sr-only">Subject</label>
+                                        <label htmlFor="csubject" className="sr-only">Subject</label>
                                         <input type="text" className="form-control" id="csubject" placeholder="Subject" />
                                     </div>
                                 </div>
 
-                                <label for="cmessage" className="sr-only">Message</label>
+                                <label htmlFor="cmessage" className="sr-only">Message</label>
                                 <textarea className="form-control" cols="30" rows="4" id="cmessage" required placeholder="Message *"></textarea>
 
                                 <button type="submit" className="btn btn-outline-primary-2 btn-minwidth-sm">

@@ -1,32 +1,32 @@
+import { useEffect, useState } from "react"
+import { req_products } from "../../api/products"
 import ItemCard from "../cards/itemCard"
 
 const FeaturedProducts = () => {
+
+    const [products, setProducts] = useState([])
+
+    const getFeaturedProducts = async () => {
+        const { data } = await req_products('featured')
+        data && setProducts(data)
+    }
+
+    useEffect(() => {
+        getFeaturedProducts()
+    }, [])
+
     return (
-        <div className="tab-pane p-0 fade show active" id="products-featured-tab" role="tabpanel" aria-labelledby="products-featured-link">
-            <div className="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
-                data-owl-options='{
-                                "nav": true, 
-                                "dots": true,
-                                "margin": 20,
-                                "loop": false,
-                                "responsive": {
-                                    "0": {
-                                        "items":2
-                                    },
-                                    "600": {
-                                        "items":2
-                                    },
-                                    "992": {
-                                        "items":3
-                                    },
-                                    "1200": {
-                                        "items":4
-                                    }
-                                }
-                            }'>
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
+        <div className="container tab-pane p-0 fade show active" id="products-featured-tab" role="tabpanel" aria-labelledby="products-featured-link">
+            <div className="row d-flex">
+                {
+                    products.length > 0 && (
+                        products.map(product => (
+                            <div className="col-6 col-md-3" key={product.id}>
+                                <ItemCard product={product} />
+                            </div>
+                        ))
+                    )
+                }
             </div>
         </div>
     )
