@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Fragment } from "react/cjs/react.production.min"
 import { req_category_products } from "../../api/products"
 import ItemCard2 from "../cards/itemCard2"
 
@@ -17,18 +18,27 @@ const RelatedProducts = ({ product }) => {
     }, [product])
 
     return (
-        <div className="container trending">
+        <Fragment>
+            {
+                products.length > 0 && (
+                    <Fragment>
+                        <h2 className="title text-center mb-4">You May Also Like</h2>
+                        <div className="container trending">
 
-            <div className="row">
-                {
-                    products.map(prod => (
-                        <div className="col-6 col-md-3" key={prod.id}>
-                            <ItemCard2 product={prod} />
+                            <div className="row">
+                                {
+                                    products.map(prod => (
+                                        <div className="col-6 col-md-3" key={prod.id}>
+                                            <ItemCard2 product={prod} />
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
-                    ))
-                }
-            </div>
-        </div>
+                    </Fragment>
+                )
+            }
+        </Fragment>
     )
 }
 

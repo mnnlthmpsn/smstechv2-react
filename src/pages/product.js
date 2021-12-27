@@ -172,9 +172,7 @@ const Product = () => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <h2 className="title text-center mb-4">You May Also Like</h2>
-
+                                
                                 {/* related Products */}
                                 <RelatedProducts product={product} />
                             </div>

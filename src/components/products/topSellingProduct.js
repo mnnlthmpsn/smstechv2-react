@@ -8,6 +8,7 @@ const TopSellingProduct = () => {
 
     const getTopSellingProducts = async () => {
         const { data } = req_products('top')
+        console.log(data)
         data && setProducts(data)
     }
 
