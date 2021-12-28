@@ -5,6 +5,7 @@ import { AuthContext } from "../contexts/authContext"
 import CartWidget from "./cartWidget"
 import Search from "./search"
 import WishlistWidget from "./wishlistWidget"
+import { CartContext } from "../contexts/cartContext"
 
 const Header = () => {
 

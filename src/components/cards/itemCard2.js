@@ -26,16 +26,16 @@ const ItemCard2 = ({ product, flag }) => {
             </figure>
 
             <div className="product-body">
-            <div className="product-cat">
+                <div className="product-cat">
                     <Link to={`/categories/${product?.attributes.category.data.attributes.slug}`} state={{ categoryName: product?.attributes.category.data.attributes.title }}>
                         {product?.attributes.category.data.attributes.title}
                     </Link>
                 </div>
-                <h3 className="product-title"><Link to={`product/${product?.attributes.slug}`}>{product?.attributes.title}</Link></h3>
+                <h3 className="product-title"><Link to={`/product/${product?.attributes.slug}`} state={{ product }}>{product?.attributes.title}</Link></h3>
                 <div className="product-price">
                     GHs {!!product && calculate_discount(product)}
                     <span className="text-danger small ml-1">
-                        <del>{product?.attributes.discount > 0 && product?.attributes.price}</del>
+                        <del className="small">{product?.attributes.discount > 0 && `GHs ${product?.attributes.price}`}</del>
                     </span>
                 </div>
                 <div className="ratings-container">

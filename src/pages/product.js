@@ -3,13 +3,22 @@ import { Fragment, useContext, useEffect, useState } from "react"
 import ImageGallery from "../components/imageGallery"
 import RelatedProducts from "../components/products/relatedProducts"
 import { CartContext } from "../contexts/cartContext"
+import { useForm } from "react-hook-form"
 
 const Product = () => {
+
+    const { register, handleSubmit, reset } = useForm({
+        defaultValues: { qty: 1 }
+    })
 
     const [product, setProduct] = useState()
 
     const { state } = useLocation()
-    const { calculate_discount } = useContext(CartContext)
+    const { calculate_discount, addToCart } = useContext(CartContext)
+
+    const ref_addToCart = data => {
+        addToCart(product.id, data.qty)
+    }
 
     useEffect(() => {
         const { product } = state
@@ -65,12 +74,12 @@ const Product = () => {
                                                 <div className="details-filter-row details-row-size">
                                                     <label htmlFor="qty">Qty:</label>
                                                     <div className="product-details-quantity">
-                                                        <input type="number" id="qty" className="form-control" min="1" max="10" step="1" data-decimals="0" required />
+                                                        <input type="number" className="form-control" min="1" step="1" data-decimals="0" required {...register('qty')} />
                                                     </div>
                                                 </div>
 
                                                 <div className="product-details-action">
-                                                    <a href="#" className="btn-product btn-cart"><span>add to cart</span></a>
+                                                    <div className="btn-product btn-cart cursor" onClick={handleSubmit((data) => ref_addToCart(data))}><span>add to cart</span></div>
 
                                                     <div className="details-action-wrapper">
                                                         <a href="#" className="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
@@ -172,7 +181,7 @@ const Product = () => {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 {/* related Products */}
                                 <RelatedProducts product={product} />
                             </div>

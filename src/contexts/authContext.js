@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createContext, useState, useEffect } from "react";
 
 export const AuthContext = createContext()
@@ -29,7 +30,7 @@ const AuthContextProvider = props => {
     }, [isAuthenticated]);
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, getPayload, setPayload, logout}}>
+        <AuthContext.Provider value={{ isAuthenticated, getPayload, setPayload, logout }}>
             {props.children}
         </AuthContext.Provider>
     )

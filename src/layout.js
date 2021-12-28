@@ -49,7 +49,7 @@ const Layout = () => {
 
             <AuthModal />
 
-            <NewsLetter />
+            {/* <NewsLetter /> */}
         </Fragment>
     )
 }

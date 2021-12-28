@@ -7,8 +7,7 @@ const TopSellingProduct = () => {
     const [products, setProducts] = useState([])
 
     const getTopSellingProducts = async () => {
-        const { data } = req_products('top')
-        console.log(data)
+        const { data } = await req_products('top')
         data && setProducts(data)
     }
 

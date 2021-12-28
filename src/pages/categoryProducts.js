@@ -1,5 +1,5 @@
 import { Link, useLocation, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { req_category_products } from "../api/products"
 import ItemCard2 from "../components/cards/itemCard2"
 import Filter from "../components/filter"
@@ -11,14 +11,14 @@ const CategoryProducts = () => {
     const params = useParams()
     const { state } = useLocation()
 
-    const getCategoryProducts = async () => {
+    const getCategoryProducts = useCallback(async () => {
         const { data } = await req_category_products(params.cat_slug)
         setProducts(data)
-    }
+    }, [params.cat_slug])
 
     useEffect(() => {
         getCategoryProducts()
-    }, [])
+    }, [getCategoryProducts])
 
     return (
         <main className="main">

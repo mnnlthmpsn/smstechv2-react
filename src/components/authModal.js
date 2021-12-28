@@ -54,12 +54,12 @@ const AuthModal = () => {
                                     <div className="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
                                         <form onSubmit={handleSubmit((data) => onSubmit(data, 'login'))}>
                                             <div className="form-group">
-                                                <label label htmlFor="singin-email">Email address *</label>
+                                                <label htmlFor="singin-email">Email address *</label>
                                                 <input type="text" className="form-control" id="singin-email" name="singin-email" {...register('login_email')} required />
                                             </div>
 
                                             <div className="form-group">
-                                                <label label htmlFor="singin-password">Password *</label>
+                                                <label htmlFor="singin-password">Password *</label>
                                                 <input type="password" className="form-control" id="singin-password" name="singin-password" {...register('login_pwd')} required />
                                             </div>
 
@@ -71,7 +71,7 @@ const AuthModal = () => {
 
                                                 <div className="custom-control custom-checkbox">
                                                     <input type="checkbox" className="custom-control-input" id="signin-remember" />
-                                                    <label className="custom-control-label" label htmlFor="signin-remember">Remember Me</label>
+                                                    <label className="custom-control-label" htmlFor="signin-remember">Remember Me</label>
                                                 </div>
 
                                                 <a href="#" className="forgot-link">Forgot Your Password?</a>
@@ -98,12 +98,12 @@ const AuthModal = () => {
                                     <div className="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
                                         <form onSubmit={handleSubmit((data) => onSubmit(data, 'signup'))}>
                                             <div className="form-group">
-                                                <label label htmlFor="register-email">Your email address *</label>
+                                                <label htmlFor="register-email">Your email address *</label>
                                                 <input type="email" className="form-control" id="register-email" name="register-email" {...register('reg_email')} required />
                                             </div>
 
                                             <div className="form-group">
-                                                <label label htmlFor="register-password">Password *</label>
+                                                <label htmlFor="register-password">Password *</label>
                                                 <input type="password" className="form-control" id="register-password" name="register-password" {...register('reg_pwd')} required />
                                             </div>
 
