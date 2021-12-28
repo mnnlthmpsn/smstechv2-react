@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react"
-import { Fragment } from "react/cjs/react.production.min"
+import { useEffect, useState, Fragment } from "react"
 import { req_category_products } from "../../api/products"
 import ItemCard2 from "../cards/itemCard2"
 
