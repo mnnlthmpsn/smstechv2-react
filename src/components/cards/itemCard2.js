@@ -4,7 +4,7 @@ import { CartContext } from '../../contexts/cartContext'
 
 const ItemCard2 = ({ product, flag }) => {
 
-    const { calculate_discount } = useContext(CartContext)
+    const { calculate_discount, addToCart } = useContext(CartContext)
 
     return (
         <div className="product product-7 text-center">
@@ -21,7 +21,7 @@ const ItemCard2 = ({ product, flag }) => {
                 </div>
 
                 <div className="product-action">
-                    <a href="#" className="btn-product btn-cart"><span>add to cart</span></a>
+                    <div className="btn-product btn-cart cursor" title="Add to cart" onClick={() => addToCart(product.id)}><span>add to cart</span></div>
                 </div>
             </figure>
 
