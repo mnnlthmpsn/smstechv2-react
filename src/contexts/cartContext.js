@@ -51,6 +51,8 @@ const CartContextProvider = ({ children }) => {
             }
             const res = !itemExists(prod_id) && await req_add_to_cart(payload, jwt_tk)
             res.data && getCart()
+        } else {
+            alert('login to continue')
         }
     }
 

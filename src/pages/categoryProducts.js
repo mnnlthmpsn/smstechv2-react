@@ -37,7 +37,7 @@ const CategoryProducts = () => {
                     <div className="row">
                         <div className="col-lg-9">
                             <div className="products mb-3">
-                                <div className="row justify-content-center">
+                                <div className="row justify-content-start">
                                     {
                                         products.map(product => (
                                             <div className="col-6 col-md-4 col-lg-4" key={product.id}>

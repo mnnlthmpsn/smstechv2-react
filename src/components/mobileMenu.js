@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { CategoryContext } from "../contexts/categoryContext"
 
@@ -13,10 +13,15 @@ const MobileMenu = () => {
 
     const { categories } = useContext(CategoryContext)
 
+    useEffect(() => {
+        const close_icon = document.getElementById('icon-close-mobile')
+        close_icon.click()
+    }, [pathname])
+
     return (
         <div className="mobile-menu-container">
             <div className="mobile-menu-wrapper">
-                <span className="mobile-menu-close"><i className="icon-close"></i></span>
+                <span className="mobile-menu-close"><i className="icon-close" id="icon-close-mobile"></i></span>
 
                 <form action="#" method="get" className="mobile-search">
                     <label htmlFor="mobile-search" className="sr-only">Search</label>
