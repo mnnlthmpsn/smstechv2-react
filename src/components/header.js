@@ -110,7 +110,7 @@ const Header = () => {
                     </div>
 
                     <div className="header-right">
-                        <i className="la la-lightbulb-o"></i><p>Clearance<span className="highlight">&nbsp;Up to 30% Off</span></p>
+                        <i className="la la-lightbulb-o"></i><p>Quality<span className="highlight">&nbsp;for less</span></p>
                     </div>
                 </div>
             </div>

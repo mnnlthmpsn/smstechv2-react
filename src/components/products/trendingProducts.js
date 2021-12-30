@@ -28,13 +28,13 @@ const TrendingProducts = () => {
                         </div>
 
                         <div className="row">
-                            <div className="col-xl-5col d-none d-xl-block">
+                            {/* <div className="col-xl-5col d-none d-xl-block">
                                 <div className="banner">
                                     <a href="#">
                                         <img src="/assets/images/demos/demo-3/banners/banner-4.jpg" alt="banner" />
                                     </a>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="col-xl-4-5col">
                                 <div className="d-flex">

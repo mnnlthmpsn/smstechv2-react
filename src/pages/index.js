@@ -53,10 +53,10 @@ const Index = () => {
             <CallToAction />
 
             {/* deals */}
-            <DealsWidget />
+            {/* <DealsWidget /> */}
 
             {/* brands */}
-            <Brands />
+            {/* <Brands /> */}
 
             <div className="container">
                 <hr className="mt-3 mb-6" />

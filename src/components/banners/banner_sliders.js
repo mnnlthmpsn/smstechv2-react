@@ -1,74 +1,58 @@
+import { useContext, useEffect, useState } from "react"
+import { CartContext } from '../../contexts/cartContext'
+import Slider from 'react-animated-slider'
+import 'react-animated-slider/build/horizontal.css';
+import { req_banners } from "../../api/products"
+import { Link } from "react-router-dom";
+
 const BannerSliders = () => {
+
+    const [banners, setBanners] = useState([])
+    const { calculate_discount } = useContext(CartContext)
+
+    const getBanners = async () => {
+        const { data } = await req_banners()
+        setBanners(data)
+    }
+
+    useEffect(() => {
+        getBanners()
+    }, [])
+
     return (
-        <div className="intro-slider-container slider-container-ratio mb-2 mb-lg-0">
-            <div className="intro-slider owl-carousel owl-simple owl-dark owl-nav-inside" data-toggle="owl" data-owl-options='{
-                                        "nav": false, 
-                                        "dots": true,
-                                        "responsive": {
-                                            "768": {
-                                                "nav": true,
-                                                "dots": false
-                                            }
-                                        }
-                                    }'>
-                <div className="intro-slide">
-                    <figure className="slide-image">
-                        <picture>
-                            <source media="(max-width: 480px)" srcSet="/assets/images/demos/demo-3/slider/slide-1-480w.jpg" />
-                            <img src="/assets/images/demos/demo-3/slider/slide-1.jpg" alt="Image Desc" />
-                        </picture>
-                    </figure>
+        <div className=" mb-2 mb-lg-0">
+            <Slider autoplay={3000}>
+                {banners.map(banner => (
+                    <div key={banner.id}>
+                        <figure>
+                            <picture>
+                                <source media="(max-width: 480px)" srcSet="/assets/images/demos/demo-3/slider/slide-1-480w.jpg" />
+                                <img src={banner.attributes?.image.data.attributes.url} alt="Image Desc" />
+                            </picture>
+                        </figure>
 
-                    <div className="intro-content">
-                        <h3 className="intro-subtitle text-primary">Daily Deals</h3>
-                        <h1 className="intro-title">
-                            AirPods <br />Earphones
-                        </h1>
+                        <div className="intro-content">
+                            <h2 className="intro-subtitle text-primary">{banner.attributes?.title}</h2>
+                            <h2 className="intro-title">{banner.attributes?.product.data.attributes.title}</h2>
 
-                        <div className="intro-price">
-                            <sup>Today:</sup>
-                            <span className="text-primary">
-                                $247<sup>.99</sup>
-                            </span>
+                            <div className="intro-price">
+                                <sup>GHS </sup>
+                                <span className="text-primary">
+                                    {calculate_discount(banner.attributes?.product.data)}
+                                    <span className="text-danger small ml-1">
+                                        <del className="small">{banner.attributes?.product.data.attributes.discount > 0 && `GHs ${banner.attributes?.product.data.attributes.price}`}</del>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <Link to={`/product/${banner.attributes?.product.data.attributes.slug}`} state={{ product: banner.attributes?.product.data }} className="btn btn-primary btn-round">
+                                <span>Shop Now</span>
+                                <i className="icon-long-arrow-right"></i>
+                            </Link>
                         </div>
-
-                        <a href="category.html" className="btn btn-primary btn-round">
-                            <span>Click Here</span>
-                            <i className="icon-long-arrow-right"></i>
-                        </a>
                     </div>
-                </div>
-
-                <div className="intro-slide">
-                    <figure className="slide-image">
-                        <picture>
-                            <source media="(max-width: 480px)" srcSet="/assets/images/demos/demo-3/slider/slide-2-480w.jpg" />
-                            <img src="/assets/images/demos/demo-3/slider/slide-2.jpg" alt="Image Desc" />
-                        </picture>
-                    </figure>
-
-                    <div className="intro-content">
-                        <h3 className="intro-subtitle text-primary">Deals and Promotions</h3>
-                        <h1 className="intro-title">
-                            Echo Dot <br />3rd Gen
-                        </h1>
-
-                        <div className="intro-price">
-                            <sup className="intro-old-price">$49,99</sup>
-                            <span className="text-primary">
-                                $29<sup>.99</sup>
-                            </span>
-                        </div>
-
-                        <a href="category.html" className="btn btn-primary btn-round">
-                            <span>Click Here</span>
-                            <i className="icon-long-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <span className="slider-loader"></span>
+                ))}
+            </Slider>
         </div>
     )
 }

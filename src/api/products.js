@@ -55,3 +55,14 @@ export const req_products = async flag => {
         err.response && console.log(err)
     }
 }
+
+export const req_banners = async () => {
+    const query = qs.stringify({ filters: { is_active: { $eq: true } }, populate: { image: { populate: '*' }, product: { populate: '*' } } }, { encodeValuesOnly: true })
+
+    try {
+        const { data } = await axios.get(`${BASE_URL}/banners?${query}`)
+        return data
+    } catch (err) {
+        err.response && console.log(err)
+    }
+}

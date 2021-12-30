@@ -1,37 +1,34 @@
+import { Link } from "react-router-dom"
+
 const Footer = () => {
-    return (
-        <footer className="footer">
-        	<div className="footer-middle">
-	            <div className="container">
-	            	<div className="row">
-	            		<div className="col-sm-6 col-lg-3">
-	            			<div className="widget widget-about">
-	            				<img src="/assets/images/demos/demo-3/logo-footer.png" className="footer-logo" alt="Footer Logo" width="105" height="25" />
-	            				<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
+	return (
+		<footer className="footer">
+			<div className="footer-middle">
+				<div className="container">
+					<div className="row">
+						<div className="col-sm-6 col-lg-3">
+							<div className="widget widget-about">
+								<div className="widget-call">
+									<i className="icon-phone"></i>
+									Got Question? Call us 24/7
+									<a href="tel:#">+0123 456 789</a>
+								</div>
+							</div>
+						</div>
 
-	            				<div className="widget-call">
-                                    <i className="icon-phone"></i>
-                                    Got Question? Call us 24/7
-                                    <a href="tel:#">+0123 456 789</a>         
-                                </div>
-	            			</div>
-	            		</div>
+						<div className="col-sm-6 col-lg-3">
+							<div className="widget">
+								<h4 className="widget-title">Useful Links</h4>
 
-	            		<div className="col-sm-6 col-lg-3">
-	            			<div className="widget">
-	            				<h4 className="widget-title">Useful Links</h4>
+								<ul className="widget-list">
+									<li><Link to="/about">About Us</Link></li>
+									<li><Link to="/services">Our Services</Link></li>
+									<li><Link to="/contact">Contact us</Link></li>
+								</ul>
+							</div>
+						</div>
 
-	            				<ul className="widget-list">
-	            					<li><a href="about.html">About Molla</a></li>
-                                    <li><a href="#">Our Services</a></li>
-	            					<li><a href="#">How to shop on Molla</a></li>
-	            					<li><a href="faq.html">FAQ</a></li>
-	            					<li><a href="contact.html">Contact us</a></li>
-	            				</ul>
-	            			</div>
-	            		</div>
-
-	            		<div className="col-sm-6 col-lg-3">
+						{/* <div className="col-sm-6 col-lg-3">
 	            			<div className="widget">
 	            				<h4 className="widget-title">Customer Service</h4>
 
@@ -44,35 +41,33 @@ const Footer = () => {
 	            					<li><a href="#">Privacy Policy</a></li>
 	            				</ul>
 	            			</div>
-	            		</div>
+	            		</div> */}
 
-	            		<div className="col-sm-6 col-lg-3">
-	            			<div className="widget">
-	            				<h4 className="widget-title">My Account</h4>
+						<div className="col-sm-6 col-lg-3">
+							<div className="widget">
+								<h4 className="widget-title">My Account</h4>
 
-	            				<ul className="widget-list">
-	            					<li><a href="#">Sign In</a></li>
-	            					<li><a href="cart.html">View Cart</a></li>
-	            					<li><a href="#">My Wishlist</a></li>
-	            					<li><a href="#">Track My Order</a></li>
-	            					<li><a href="#">Help</a></li>
-	            				</ul>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-	        </div>
+								<ul className="widget-list">
+									<li><Link to="/">Sign In</Link></li>
+									<li><Link to="/cart">View Cart</Link></li>
+									<li><Link to="/wishlist">My Wishlist</Link></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-	        <div className="footer-bottom">
-	        	<div className="container">
-	        		<p className="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p>
-	        		<figure className="footer-payments">
-	        			<img src="/assets/images/payments.png" alt="Payment methods" width="272" height="20" />
-	        		</figure>
-	        	</div>
-	        </div>
-        </footer>
-    )
+			<div className="footer-bottom">
+				<div className="container">
+					<p className="footer-copyright">Copyright © 2021 SMSTech Systems. All Rights Reserved.</p>
+					<figure className="footer-payments">
+						<img src="/assets/images/payments.png" alt="Payment methods" width="272" height="20" />
+					</figure>
+				</div>
+			</div>
+		</footer>
+	)
 }
 
 export default Footer 
