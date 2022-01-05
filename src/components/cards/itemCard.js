@@ -15,11 +15,11 @@ const ItemCard = ({ product, flag }) => {
                 </Link>
 
                 <div className="product-action-vertical">
-                    <a href="#" className="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
+                    <a href="#" className="btn-product-icon btn-wishlist btn-expandable text-white"><span className="text-white">add to wishlist</span></a>
                 </div>
 
                 <div className="product-action product-action-dark">
-                    <div className="btn-product btn-cart cursor" title="Add to cart" onClick={() => addToCart(product.id)}><span>add to cart</span></div>
+                    <div className="btn-product btn-cart text-white cursor" title="Add to cart" onClick={() => addToCart(product.id)}><span className="text-white">add to cart</span></div>
                 </div>
             </figure>
 

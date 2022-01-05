@@ -20,7 +20,7 @@ const BannerSliders = () => {
     }, [])
 
     return (
-        <div className=" mb-2 mb-lg-0">
+        <div className="mb-2 mb-lg-0">
             <Slider autoplay={3000}>
                 {banners.map(banner => (
                     <div key={banner.id}>
@@ -32,8 +32,8 @@ const BannerSliders = () => {
                         </figure>
 
                         <div className="intro-content">
-                            <h2 className="intro-subtitle text-primary">{banner.attributes?.title}</h2>
-                            <h2 className="intro-title">{banner.attributes?.product.data.attributes.title}</h2>
+                            <h2 className="intro-subtitle sec_color">{banner.attributes?.title}</h2>
+                            <h2 className="intro-title sec_color">{banner.attributes?.product.data.attributes.title}</h2>
 
                             <div className="intro-price">
                                 <sup>GHS </sup>
