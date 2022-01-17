@@ -10,10 +10,10 @@ const CartWidget = () => {
         <div className="dropdown cart-dropdown">
             <a href="#" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <div className="icon">
-                    <i className="icon-shopping-cart"></i>
-                    <span className="cart-count">{cartItems.length}</span>
+                    <i className="icon-shopping-cart text-white"></i>
+                    <span className="cart-count bg-white text-primary">{cartItems.length}</span>
                 </div>
-                <p>Cart</p>
+                <p className="text-white">Cart</p>
             </a>
 
             <div className="dropdown-menu dropdown-menu-right">
@@ -53,7 +53,6 @@ const CartWidget = () => {
 
                 <div className="dropdown-cart-action">
                     <Link to='/cart' className="btn btn-primary">View Cart</Link>
-                    <Link to="/checkout" className="btn btn-outline-primary-2"><span>Checkout</span><i className="icon-long-arrow-right"></i></Link>
                 </div>
             </div>
         </div>

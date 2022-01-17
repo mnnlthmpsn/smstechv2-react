@@ -11,7 +11,7 @@ const Footer = () => {
 								<div className="widget-call">
 									<i className="icon-phone"></i>
 									Got Question? Call us 24/7
-									<a href="tel:#">+0123 456 789</a>
+									<a href="tel:#">Call: +233 (0) 20 3441 481</a>
 								</div>
 							</div>
 						</div>

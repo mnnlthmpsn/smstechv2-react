@@ -209,7 +209,7 @@ const Checkout = () => {
 
 										<button type="submit" className="btn btn-outline-primary-2 btn-order btn-block">
 											<span className="btn-text">Place Order</span>
-											<span className="btn-hover-text">Proceed to Checkout</span>
+											<span className="btn-hover-text">Place Order</span>
 										</button>
 									</div>
 								</aside>

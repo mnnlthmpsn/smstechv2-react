@@ -10,11 +10,9 @@ const SocialWidget = () => {
                                     <p className="cta-desc">Stay in touch with us through our Social Media handles</p>
                             
                                     <div className="social-icons social-icons-colored justify-content-center">
-                                        <a href="#" className="social-icon social-facebook" title="Facebook" target="_blank"><i className="icon-facebook-f"></i></a>
+                                        <a href="https://www.facebook.com/SmsTechsystems" className="social-icon social-facebook" title="Facebook" target="_blank"><i className="icon-facebook-f"></i></a>
                                         <a href="#" className="social-icon social-twitter" title="Twitter" target="_blank"><i className="icon-twitter"></i></a>
-                                        <a href="#" className="social-icon social-instagram" title="Instagram" target="_blank"><i className="icon-instagram"></i></a>
-                                        <a href="#" className="social-icon social-youtube" title="Youtube" target="_blank"><i className="icon-youtube"></i></a>
-                                        <a href="#" className="social-icon social-pinterest" title="Pinterest" target="_blank"><i className="icon-pinterest"></i></a>
+                                        <a href="https://www.instagram.com/sms_techsystems" className="social-icon social-instagram" title="Instagram" target="_blank"><i className="icon-instagram"></i></a>
                                     </div>
                                 </div>
                             </div>

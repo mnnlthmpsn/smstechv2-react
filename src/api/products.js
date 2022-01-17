@@ -66,3 +66,12 @@ export const req_banners = async () => {
         err.response && console.log(err)
     }
 }
+
+export const req_brands = async () => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/brands`)
+        return data
+    } catch (err) {
+        err.response && console.log(err)
+    }
+}

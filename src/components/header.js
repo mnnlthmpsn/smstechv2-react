@@ -21,11 +21,11 @@ const Header = () => {
     ]
 
     return (
-        <header className="header header-intro-clearance header-3">
-            <div className="header-top">
+        <header className="header header-intro-clearance header-3 bg-primary">
+            <div className="header-top bg-primary">
                 <div className="container">
-                    <div className="header-left">
-                        <a href="tel:#"><i className="icon-phone"></i>Call: +0123 456 789</a>
+                    <div className="header-left text-white">
+                        <a href="tel:#" className="text-white"><i className="icon-phone"></i>Call: +233 (0) 20 3441 481 | 23 3441 845</a>
                     </div>
 
                     <div className="header-right">
@@ -34,8 +34,8 @@ const Header = () => {
                                 <a href="#">Links</a>
                                 <ul>
                                     {isAuthenticated
-                                        ? <li><span className="text-primary cursor" onClick={logout}>Logout</span></li>
-                                        : <li><a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a></li>
+                                        ? <li><span className="text-white cursor" onClick={logout}>Logout</span></li>
+                                        : <li><a href="#signin-modal" data-toggle="modal" className="text-white">Sign in / Sign up</a></li>
                                     }
                                 </ul>
                             </li>
@@ -45,7 +45,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="header-middle">
+            <div className="header-middle" style={{ color: 'red !important' }}>
                 <div className="container">
                     <div className="header-left">
                         <button className="mobile-menu-toggler">

@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom"
+
 const WishlistWidget = () => {
     return (
         <div className="wishlist">
-            <a href="wishlist.html" title="Wishlist">
-                <div className="icon">
+            <Link to="wishlist" title="Wishlist">
+                <div className="icon text-white">
                     <i className="icon-heart-o"></i>
-                    <span className="wishlist-count badge">3</span>
+                    <span className="wishlist-count badge text-primary bg-white">3</span>
                 </div>
-                <p>Wishlist</p>
-            </a>
+                <p className="text-white">Wishlist</p>
+            </Link>
         </div>
     )
 }
