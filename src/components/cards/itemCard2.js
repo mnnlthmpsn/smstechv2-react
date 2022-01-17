@@ -21,7 +21,7 @@ const ItemCard2 = ({ product, flag }) => {
                 </div>
 
                 <div className="product-action">
-                    <div className="btn-product btn-cart cursor text-white" title="Add to cart" onClick={() => addToCart(product.id)}><span className="text-white">add to cart</span></div>
+                    <div className="btn-product btn-cart bg-primary cursor text-white" title="Add to cart" onClick={() => addToCart(product.id)}><span className="text-white">add to cart</span></div>
                 </div>
             </figure>
 
