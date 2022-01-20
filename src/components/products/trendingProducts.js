@@ -27,27 +27,14 @@ const TrendingProducts = () => {
                             </div>
                         </div>
 
-                        <div className="row">
-                            {/* <div className="col-xl-5col d-none d-xl-block">
-                                <div className="banner">
-                                    <a href="#">
-                                        <img src="/assets/images/demos/demo-3/banners/banner-4.jpg" alt="banner" />
-                                    </a>
-                                </div>
-                            </div> */}
-
-                            <div className="col-xl-4-5col">
-                                <div className="d-flex">
-                                    {
-                                        products.map(product => (
-                                            <div className="col-6 col-md-4" key={product.id}>
-                                                <ItemCard product={product}/>
-                                            </div>
-                                        ))
-                                    }
-
-                                </div>
-                            </div>
+                        <div className="row d-flex">
+                            {
+                                products.map(product => (
+                                    <div className="col-6 col-md-4" key={product.id}>
+                                        <ItemCard product={product} />
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 )

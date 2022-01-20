@@ -5,3 +5,7 @@
 .sec_color {
     color: #FBA70F;
 }
+
+body {
+    background-color: #f2f2f2 !important;
+}

@@ -26,7 +26,7 @@ const TopSellingProduct = () => {
                             </div>
                         </div>
 
-                        <div className="d-flex">
+                        <div className="row d-flex">
                             {
                                 products.map(product => (
                                     <div className="col-6 col-md-3" key={product.id}>
