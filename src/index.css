@@ -20,3 +20,7 @@ body {
 .product-media {
     background-color: white !important;
 }
+
+.product {
+    margin-bottom: 30px !important;
+}
