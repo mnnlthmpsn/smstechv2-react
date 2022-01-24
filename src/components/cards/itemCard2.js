@@ -7,7 +7,7 @@ const ItemCard2 = ({ product, flag }) => {
     const { calculate_discount, addToCart } = useContext(CartContext)
 
     return (
-        <div className="product product-7 text-center">
+        <div className="product product-7 text-center h-100">
             <figure className="product-media">
                 {!!flag && !!!product?.attributes.discount && <span className="product-label label-new">{flag}</span>}
                 {!!product?.attributes.discount && <span className="product-label label-new"><p className="small text-white">{product?.attributes.discount}% off</p></span>}

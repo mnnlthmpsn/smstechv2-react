@@ -16,3 +16,7 @@ body {
     object-fit: contain;
     object-position: center;
 }
+
+.product-media {
+    background-color: white !important;
+}
