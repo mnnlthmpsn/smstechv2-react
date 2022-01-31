@@ -83,7 +83,7 @@ const Index = () => {
                 <hr className="mt-5 mb-0" />
             </div>
 
-            <iframe className="vw-100 overflow-hidden" style={{ height: '150vh' }} src='https://partnerportal.sophos.com/en-us/microsite/overview.aspx?partner_referral_id=001j0000013684E&partner_name=SMS+TECHSYSTEMS' frameborder='0'></iframe>
+            <iframe className="vw-100 overflow-hidden" style={{ height: '100vh' }} src='https://partnerportal.sophos.com/en-us/microsite/overview.aspx?partner_referral_id=001j0000013684E&partner_name=SMS+TECHSYSTEMS' frameborder='0'></iframe>
 
 
 
