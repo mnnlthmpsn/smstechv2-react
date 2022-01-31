@@ -25,7 +25,7 @@ const Header = () => {
             <div className="header-top bg-primary">
                 <div className="container">
                     <div className="header-left text-white">
-                        <a href="tel:#" className="text-white"><i className="icon-phone"></i>Call: +233 (0) 20 3441 481 | 23 3441 845</a>
+                        <a href="tel:#" className="text-white"><i className="icon-phone"></i>Call: 030 224 1894 | 024 8441 845 | 023 3441 845 </a>
                     </div>
 
                     <div className="header-right">

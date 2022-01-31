@@ -26,7 +26,7 @@ const BannerSliders = () => {
                     <div key={banner.id}>
                         <figure>
                             <picture>
-                                <source media="(max-width: 480px)" srcSet="/assets/images/demos/demo-3/slider/slide-1-480w.jpg" />
+                                <source media="(max-width: 480px)" srcSet={banner.attributes?.mobile_image.data.attributes.url}/>
                                 <img src={banner.attributes?.image.data.attributes.url} alt="Image Desc" />
                             </picture>
                         </figure>

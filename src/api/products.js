@@ -57,7 +57,7 @@ export const req_products = async flag => {
 }
 
 export const req_banners = async () => {
-    const query = qs.stringify({ filters: { is_active: { $eq: true } }, populate: { image: { populate: '*' }, product: { populate: '*' } } }, { encodeValuesOnly: true })
+    const query = qs.stringify({ filters: { is_active: { $eq: true } }, populate: { image: { populate: '*' }, product: { populate: '*' }, mobile_image: { populate: '*' } } }, { encodeValuesOnly: true })
 
     try {
         const { data } = await axios.get(`${BASE_URL}/banners?${query}`)
@@ -68,8 +68,9 @@ export const req_banners = async () => {
 }
 
 export const req_brands = async () => {
+    const query = qs.stringify({ populate: { image: { populate: '*' } } })
     try {
-        const { data } = await axios.get(`${BASE_URL}/brands`)
+        const { data } = await axios.get(`${BASE_URL}/brands?${query}`)
         return data
     } catch (err) {
         err.response && console.log(err)
