@@ -20,7 +20,7 @@ const CartWidget = () => {
                 <div className="dropdown-cart-products">
                     {
                         cartItems.length > 0 && cartItems.map(cartItem => (
-                            <div className="product" key={cartItem.id}>
+                            <div className="product" style={{ height: '80px' }} key={cartItem.id}>
                                 <div className="product-cart-details">
                                     <h4 className="product-title">
                                     <Link to={`/product/${cartItem.product?.attributes.slug}`} state={{ product: cartItem.product }}>

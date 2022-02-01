@@ -65,7 +65,7 @@ const Header = () => {
                         isAuthenticated && (
                             <div className="header-right">
                                 {/* Wishlist */}
-                                <WishlistWidget />
+                                {/* <WishlistWidget /> */}
 
                                 {/* cart */}
                                 <CartWidget />

@@ -62,7 +62,7 @@ const Cart = () => {
 											fields.map((field, index) => (
 												<tr key={cartItems[index]?.id}>
 													<td className="product-col">
-														<div className="product">
+														<div className="product" style={{ backgroundColor: '#f2f2f2' }}>
 															<figure className="product-media">
 																<a href="#">
 																	<img src={cartItems[index]?.product.attributes.images.data[0].attributes.url} alt="Product image" />

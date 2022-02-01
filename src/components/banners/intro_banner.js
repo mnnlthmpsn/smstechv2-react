@@ -37,7 +37,7 @@ const IntroBanners = () => {
             {/* top */}
             <div className="banner mb-lg-1 mb-xl-2">
                 <Link to={`/product/${banners.top.attributes?.slug}`} state={{ product: banners.top }}>
-                    <img className='banner-image' src={banners.top.attributes?.banner_img.data.attributes.url} alt="Banner" />
+                    <img className='banner-image' src={banners.top.attributes?.banner_img.data.attributes.url} alt="Banner"/>
                 </Link>
 
                 <div className="banner-content">

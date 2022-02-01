@@ -38,12 +38,12 @@ const ItemCard2 = ({ product, flag }) => {
                         <del className="small">{product?.attributes.discount > 0 && `GHs ${product?.attributes.price}`}</del>
                     </span>
                 </div>
-                <div className="ratings-container">
+                {/* <div className="ratings-container">
                     <div className="ratings">
                         <div className="ratings-val" style={{ width: '20%' }}></div>
                     </div>
                     <span className="ratings-text">( 2 Reviews )</span>
-                </div>
+                </div> */}
             </div>
         </div>
     )

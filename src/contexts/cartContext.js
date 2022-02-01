@@ -26,8 +26,10 @@ const CartContextProvider = ({ children }) => {
         // 2nd get cartItems with cartID data[0].id
         const res = await req_get_cart_items(data[0].id, jwt)
         const new_arr = res.map(cit => {
+            console.log(cit)
             return { id: cit.id, qty: cit.attributes.quantity, product: cit.attributes.product.data }
         })
+        console.log(new_arr)
         setCartItems(new_arr)
     }, [isAuthenticated])
 

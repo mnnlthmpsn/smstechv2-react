@@ -25,13 +25,11 @@ const Brands = () => {
             </div>
             <div className="col-lg-12">
                 <div className="brands-display">
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-start">
                         {
                             brands.length > 0 && brands.map((brand, index) => (
                                 <div className="col-4 md:col-2" key={index}>
-                                    <a href="#" className="brand">
-                                        <img src={brand.attributes.image.data.attributes.url} alt={brand.attributes.brand_name} />
-                                    </a>
+                                    <img className="brands" data-toggle="tooltip" data-placement="bottom" title={brand.attributes.brand_name} src={brand.attributes.image.data.attributes.url} alt={brand.attributes.brand_name} />
                                 </div>
                             ))
                         }
