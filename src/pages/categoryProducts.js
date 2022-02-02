@@ -40,7 +40,7 @@ const CategoryProducts = () => {
                                 <div className="row justify-content-start">
                                     {
                                         products.map(product => (
-                                            <div className="col-6 col-md-3 col-lg-3 text-start" key={product.id}>
+                                            <div className="col-6 col-md-3 col-lg-3 text-start mb-2" key={product.id}>
                                                 <ItemCard2 product={product} />
                                             </div>
                                         ))

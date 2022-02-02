@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const CategoryCard = ({ category }) => {
 
     return (
-        <div className="product product-7 text-center mb-3">
+        <div className="product product-7 text-center">
             <figure className="product-media">
                 <Link to={`${category.attributes.slug}`} state={{ categoryName: category.attributes.title }}>
                     <img src={category.attributes.thumbnail.data.attributes.url} alt={category.attributes.title} className="product-image" loading="lazy"/>

@@ -21,7 +21,7 @@ const RelatedProducts = ({ product }) => {
             {
                 products.length > 0 && (
                     <Fragment>
-                        <h2 className="title text-center mb-4">You May Also Like</h2>
+                        <h2 className="title text-center mb-2">You May Also Like</h2>
                         <div className="container trending">
 
                             <div className="row">

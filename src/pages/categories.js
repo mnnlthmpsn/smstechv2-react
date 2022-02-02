@@ -12,7 +12,7 @@ const Categories = () => {
         setCategories(data)
     }
 
-    useEffect(async () => {
+    useEffect(() => {
         getCategories()
     }, [])
 
@@ -31,7 +31,7 @@ const Categories = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <div className="products mb-3">
+                            <div className="products">
                                 <div className="row justify-content-start">
                                     {
                                         categories.map(category => (

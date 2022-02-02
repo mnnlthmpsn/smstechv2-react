@@ -29,7 +29,7 @@ const TopSellingProduct = () => {
                         <div className="row d-flex">
                             {
                                 products.map(product => (
-                                    <div className="col-6 col-md-3" key={product.id}>
+                                    <div className="col-6 col-md-3 mb-2" key={product.id}>
                                         <ItemCard product={product} />
                                     </div>
                                 ))
