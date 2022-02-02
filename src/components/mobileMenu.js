@@ -31,10 +31,10 @@ const MobileMenu = () => {
 
                 <ul className="nav nav-pills-mobile nav-border-anim" role="tablist">
                     <li className="nav-item">
-                        <a className="nav-link active" id="mobile-menu-link" data-toggle="tab" href="#mobile-menu-tab" role="tab" aria-controls="mobile-menu-tab" aria-selected="true">Menu</a>
+                        <a className="nav-link text-white active" id="mobile-menu-link" data-toggle="tab" href="#mobile-menu-tab" role="tab" aria-controls="mobile-menu-tab" aria-selected="true">Menu</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" id="mobile-cats-link" data-toggle="tab" href="#mobile-cats-tab" role="tab" aria-controls="mobile-cats-tab" aria-selected="false">Categories</a>
+                        <a className="nav-link text-white" id="mobile-cats-link" data-toggle="tab" href="#mobile-cats-tab" role="tab" aria-controls="mobile-cats-tab" aria-selected="false">Categories</a>
                     </li>
                 </ul>
 
@@ -45,7 +45,7 @@ const MobileMenu = () => {
                                 {
                                     navLinks.map(navLink => (
                                         <li className={pathname === navLink.path ? 'active' : undefined} key={navLink.path}>
-                                            <Link to={navLink.path}>{navLink.name}</Link>
+                                            <Link to={navLink.path}><p className="text-white">{navLink.name}</p></Link>
                                         </li>
                                     ))
                                 }

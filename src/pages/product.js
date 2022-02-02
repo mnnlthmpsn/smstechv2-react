@@ -53,12 +53,12 @@ const Product = () => {
                                             <div className="product-details">
                                                 <h1 className="product-title">{product.attributes.title}</h1>
 
-                                                <div className="ratings-container">
+                                                {/* <div className="ratings-container">
                                                     <div className="ratings">
                                                         <div className="ratings-val" style={{ width: '80%' }}></div>
                                                     </div>
                                                     <a className="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews )</a>
-                                                </div>
+                                                </div> */}
 
                                                 <div className="product-price">
                                                     GHs {calculate_discount(product)}
@@ -112,9 +112,9 @@ const Product = () => {
                                         <li className="nav-item">
                                             <a className="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">Description</a>
                                         </li>
-                                        <li className="nav-item">
+                                        {/* <li className="nav-item">
                                             <a className="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">Reviews (2)</a>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                     <div className="tab-content">
                                         <div className="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
@@ -123,7 +123,7 @@ const Product = () => {
                                                 {product?.attributes.product_info}
                                             </div>
                                         </div>
-                                        <div className="tab-pane fade" id="product-review-tab" role="tabpanel" aria-labelledby="product-review-link">
+                                        {/* <div className="tab-pane fade" id="product-review-tab" role="tabpanel" aria-labelledby="product-review-link">
                                             <div className="reviews">
                                                 <h3>Reviews (2)</h3>
                                                 <div className="review">
@@ -178,7 +178,7 @@ const Product = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 

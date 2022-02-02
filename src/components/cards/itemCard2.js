@@ -16,9 +16,9 @@ const ItemCard2 = ({ product, flag }) => {
                     <img src={product?.attributes.images.data[0].attributes.url} alt={product?.attributes.title} className="product-image" loading="lazy" />
                 </Link>
 
-                <div className="product-action-vertical">
-                    <a href="#" className="btn-product-icon btn-wishlist btn-expandable text-white"><span className="text-white">add to wishlist</span></a>
-                </div>
+                {/* <div className="product-action-vertical">
+                    <span className="btn-product-icon btn-wishlist btn-expandable text-white"><span className="text-white">add to wishlist</span></span>
+                </div> */}
 
                 <div className="product-action">
                     <div className="btn-product btn-cart bg-primary cursor text-white" title="Add to cart" onClick={() => addToCart(product.id)}><span className="text-white">add to cart</span></div>

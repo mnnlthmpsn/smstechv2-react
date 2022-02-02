@@ -27,7 +27,7 @@ const RelatedProducts = ({ product }) => {
                             <div className="row">
                                 {
                                     products.map(prod => (
-                                        <div className="col-6 col-md-3" key={prod.id}>
+                                        <div className="col-6 col-md-3 mb-2" key={prod.id}>
                                             <ItemCard2 product={prod} />
                                         </div>
                                     ))
