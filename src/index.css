@@ -42,3 +42,21 @@ body {
     object-fit: contain;
     object-position: center;
 }
+
+.selected_image {
+    width: 350px !important;
+    height: 350px !important;
+    object-fit: contain;
+    object-position: center;
+    background-color: white;
+    padding: 10px;
+}
+
+.image_thumbnail {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    object-position: center;
+    background-color: white;
+    padding: 2px;
+}
