@@ -74,7 +74,7 @@ const DeliveryWidget = () => {
                 <Link to="/checkout" state={{ deliveryCost }} className="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</Link>
             </div>
 
-            <Link to="/category" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i className="icon-refresh"></i></Link>
+            <Link to="/categories" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i className="icon-refresh"></i></Link>
         </aside>
     )
 }
