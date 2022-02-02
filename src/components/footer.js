@@ -50,7 +50,7 @@ const Footer = () => {
 								<ul className="widget-list">
 									<li><Link to="/">Sign In</Link></li>
 									<li><Link to="/cart">View Cart</Link></li>
-									<li><Link to="/wishlist">My Wishlist</Link></li>
+									{/* <li><Link to="/wishlist">My Wishlist</Link></li> */}
 								</ul>
 							</div>
 						</div>
