@@ -28,9 +28,7 @@ const Brands = () => {
                     <div className="row justify-content-start">
                         {
                             brands.length > 0 && brands.map((brand, index) => (
-                                <div className="col-4 md:col-2" key={index}>
-                                    <img className="brands" data-toggle="tooltip" data-placement="bottom" title={brand.attributes.brand_name} src={brand.attributes.image.data.attributes.url} alt={brand.attributes.brand_name} />
-                                </div>
+                                <img key={index} className="brands m-2" data-toggle="tooltip" data-placement="bottom" title={brand.attributes.brand_name} src={brand.attributes.image.data.attributes.url} alt={brand.attributes.brand_name} />
                             ))
                         }
                     </div>
