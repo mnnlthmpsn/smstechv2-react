@@ -6,7 +6,6 @@ import Header from './components/header'
 import Footer from "./components/footer";
 import MobileMenu from "./components/mobileMenu";
 import AuthModal from "./components/authModal";
-import NewsLetter from "./components/newsletter";
 import CategoryProducts from "./pages/categoryProducts";
 import Product from "./pages/product";
 import Categories from "./pages/categories";
