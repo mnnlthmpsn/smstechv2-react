@@ -132,7 +132,7 @@ const Checkout = () => {
 										</table>
 
 										<div className="accordion-summary" id="accordion-payment">
-											<div className="card">
+											{/* <div className="card">
 												<div className="card-header" id="heading-1">
 													<h2 className="card-title">
 														<a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
@@ -160,7 +160,7 @@ const Checkout = () => {
 														Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
 													</div>
 												</div>
-											</div>
+											</div> */}
 
 											<div className="card">
 												<div className="card-header" id="heading-3">
@@ -171,12 +171,13 @@ const Checkout = () => {
 													</h2>
 												</div>
 												<div id="collapse-3" className="collapse" aria-labelledby="heading-3" data-parent="#accordion-payment">
-													<div className="card-body">Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+													<div className="card-body">
+														Pay physical cash when item is delivered to you
 													</div>
 												</div>
 											</div>
 
-											<div className="card">
+											{/* <div className="card">
 												<div className="card-header" id="heading-4">
 													<h2 className="card-title">
 														<a className="collapsed" role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
@@ -204,7 +205,7 @@ const Checkout = () => {
 													<div className="card-body"> Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit ame.
 													</div>
 												</div>
-											</div>
+											</div> */}
 										</div>
 
 										<button type="submit" className="btn btn-outline-primary-2 btn-order btn-block">

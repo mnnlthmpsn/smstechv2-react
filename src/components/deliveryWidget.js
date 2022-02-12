@@ -10,7 +10,7 @@ const DeliveryWidget = () => {
 
     const calcDelivery = flag => {
         const charges = {
-            'pay-on-delivery': 0,
+            'out_accra_tema': 40,
             'accra': 20,
             'tema': 25
         }
@@ -37,18 +37,8 @@ const DeliveryWidget = () => {
                         <tr className="summary-shipping-row">
                             <td>
                                 <div className="custom-control custom-radio">
-                                    <input type="radio" id="free-shipping" name="shipping" value='pay-on-delivery' className="custom-control-input" onChange={e => calcDelivery(e.target.value)} />
-                                    <label className="custom-control-label" htmlFor="free-shipping">Pay on Delivery</label>
-                                </div>
-                            </td>
-                            <td></td>
-                        </tr>
-
-                        <tr className="summary-shipping-row">
-                            <td>
-                                <div className="custom-control custom-radio">
-                                    <input type="radio" id="standart-shipping" name="shipping" value='accra' className="custom-control-input" onChange={e => calcDelivery(e.target.value)} />
-                                    <label className="custom-control-label" htmlFor="standart-shipping">Within Accra:</label>
+                                    <input type="radio" id="accra" name="shipping" value='accra' className="custom-control-input" onChange={e => calcDelivery(e.target.value)} />
+                                    <label className="custom-control-label" htmlFor="accra">Within Accra:</label>
                                 </div>
                             </td>
                             <td>GHs 20.00</td>
@@ -57,11 +47,21 @@ const DeliveryWidget = () => {
                         <tr className="summary-shipping-row">
                             <td>
                                 <div className="custom-control custom-radio">
-                                    <input type="radio" id="express-shipping" name="shipping" value='tema' className="custom-control-input" onChange={e => calcDelivery(e.target.value)} />
-                                    <label className="custom-control-label" htmlFor="express-shipping">Within Tema:</label>
+                                    <input type="radio" id="tema" name="shipping" value='tema' className="custom-control-input" onChange={e => calcDelivery(e.target.value)} />
+                                    <label className="custom-control-label" htmlFor="tema">Within Tema:</label>
                                 </div>
                             </td>
                             <td>GHs 25.00</td>
+                        </tr>
+
+                        <tr className="summary-shipping-row">
+                            <td>
+                                <div className="custom-control custom-radio">
+                                    <input type="radio" id="out_accra_tema" name="shipping" value='out_accra_tema' className="custom-control-input" onChange={e => calcDelivery(e.target.value)} />
+                                    <label className="custom-control-label" htmlFor="out_accra_tema">Outside Accra/Tema:</label>
+                                </div>
+                            </td>
+                            <td>GHs 40.00</td>
                         </tr>
 
                         <tr className="summary-total">
