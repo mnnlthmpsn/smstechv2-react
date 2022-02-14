@@ -71,7 +71,7 @@ const DeliveryWidget = () => {
                     </tbody>
                 </table>
 
-                <Link to="/checkout" state={{ deliveryCost }} className="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</Link>
+                { deliveryCost > 0 && <Link to="/checkout" state={{ deliveryCost }} className="btn btn-outline-primary-2 btn-order btn-block" >PROCEED TO CHECKOUT</Link> }
             </div>
 
             <Link to="/categories" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i className="icon-refresh"></i></Link>

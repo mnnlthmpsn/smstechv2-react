@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import { useForm } from "react-hook-form"
 import { useLocation } from "react-router-dom"
 import { CartContext } from "../contexts/cartContext"
 
@@ -8,6 +9,11 @@ const Checkout = () => {
 	const { deliveryCost } = state
 
 	const { cartItems, getTotal, calculate_discount } = useContext(CartContext)
+	const { register, handleSubmit, reset } = useForm()
+
+	const onSubmit = async (data) => {
+        console.log(data)
+    }
 
 	return (
 		<main className="main">
@@ -29,41 +35,31 @@ const Checkout = () => {
 			<div className="page-content">
 				<div className="checkout">
 					<div className="container">
-						<form action="#">
+						<form onSubmit={handleSubmit((data) => onSubmit(data))}>
 							<div className="row">
 								<div className="col-lg-9">
 									<h2 className="checkout-title">Billing Details</h2>
 									<div className="row">
 										<div className="col-sm-6">
 											<label>First Name *</label>
-											<input type="text" className="form-control" required />
+											<input type="text" className="form-control" required {...register('firstname')} />
 										</div>
 
 										<div className="col-sm-6">
 											<label>Last Name *</label>
-											<input type="text" className="form-control" required />
+											<input type="text" className="form-control" required {...register('lastname')} />
 										</div>
 									</div>
 
-									<label>Company Name (Optional)</label>
-									<input type="text" className="form-control" />
-
-									<label>Country *</label>
-									<input type="text" className="form-control" required />
-
-									<label>Street address *</label>
-									<input type="text" className="form-control" placeholder="House number and Street name" required />
-									<input type="text" className="form-control" placeholder="Appartments, suite, unit etc ..." required />
-
 									<div className="row">
 										<div className="col-sm-6">
-											<label>Town / City *</label>
-											<input type="text" className="form-control" required />
+											<label>Email address *</label>
+											<input type="email" className="form-control" required />
 										</div>
 
 										<div className="col-sm-6">
-											<label>State / County *</label>
-											<input type="text" className="form-control" required />
+											<label>GPS Address *</label>
+											<input type="text" className="form-control" required {...register('gps_address')} />
 										</div>
 									</div>
 
@@ -75,25 +71,12 @@ const Checkout = () => {
 
 										<div className="col-sm-6">
 											<label>Phone *</label>
-											<input type="tel" className="form-control" required />
+											<input type="tel" className="form-control" required {...register('phone')} />
 										</div>
 									</div>
 
-									<label>Email address *</label>
-									<input type="email" className="form-control" required />
-
-									<div className="custom-control custom-checkbox">
-										<input type="checkbox" className="custom-control-input" id="checkout-create-acc" />
-										<label className="custom-control-label" for="checkout-create-acc">Create an account?</label>
-									</div>
-
-									<div className="custom-control custom-checkbox">
-										<input type="checkbox" className="custom-control-input" id="checkout-diff-address" />
-										<label className="custom-control-label" for="checkout-diff-address">Ship to a different address?</label>
-									</div>
-
 									<label>Order notes (optional)</label>
-									<textarea className="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+									<textarea className="form-control" cols="30" rows="4" {...register('order_note')} placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
 								</div>
 								<aside className="col-lg-3">
 									<div className="summary">
