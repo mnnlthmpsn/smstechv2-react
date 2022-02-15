@@ -1,19 +1,63 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
+import Swal from "sweetalert2"
+import { req_delete_cartitem } from "../api/cart"
+import { req_create_order } from "../api/order"
+import { AuthContext } from "../contexts/authContext"
 import { CartContext } from "../contexts/cartContext"
 
 const Checkout = () => {
 
 	const { state } = useLocation()
 	const { deliveryCost } = state
+	const navigator = useNavigate() 
 
 	const { cartItems, getTotal, calculate_discount } = useContext(CartContext)
+	const { getPayload } = useContext(AuthContext)
+
+	const [orderProducts, setOrderProducts] = useState([])
 	const { register, handleSubmit, reset } = useForm()
 
+	useEffect(() => {
+		cartItems.forEach(cartItem => {
+			const item = { product: cartItem.product.id, quantity: cartItem.qty }
+			orderProducts.push(item)
+		});
+	}, [cartItems])
+
 	const onSubmit = async (data) => {
-        console.log(data)
-    }
+		const { jwt } = getPayload()
+		const payload = {
+			"data": {
+				"firstname": data.firstname,
+				"lastname": data.lastname,
+				"email": data.email,
+				"gps_address": data.gps_address,
+				"phone": data.phone,
+				"extra_note": data.order_note,
+				"post_code": data.post_code,
+				"orderItem": orderProducts
+			}
+		}
+
+		console.log('...loading')
+		try {
+			const res = await req_create_order(payload, jwt)
+			res.status === 200 && Swal.fire({ icon: 'success', text: 'Order placed successfully. An agent will contact you shortly' })
+				.then(() => {
+					// delete cart items
+					cartItems.forEach(async cart_item => {
+						await req_delete_cartitem(cart_item.id, jwt)
+					})
+
+					navigator('/')
+				})
+		} catch (err) {
+			alert('error occured')
+		}
+		
+	}
 
 	return (
 		<main className="main">
@@ -54,7 +98,7 @@ const Checkout = () => {
 									<div className="row">
 										<div className="col-sm-6">
 											<label>Email address *</label>
-											<input type="email" className="form-control" required />
+											<input type="email" className="form-control" required {...register('email')} />
 										</div>
 
 										<div className="col-sm-6">
@@ -66,7 +110,7 @@ const Checkout = () => {
 									<div className="row">
 										<div className="col-sm-6">
 											<label>Postcode / ZIP *</label>
-											<input type="text" className="form-control" required />
+											<input type="text" className="form-control" required {...register('post_code')} />
 										</div>
 
 										<div className="col-sm-6">

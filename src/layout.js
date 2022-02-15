@@ -17,6 +17,7 @@ import WishList from "./pages/wishlist";
 import Dashboard from "./pages/dashboard";
 import Checkout from "./pages/checkout";
 import Cart from "./pages/cart";
+import MyLoader from "./components/loader";
 
 const Layout = () => {
     return (
@@ -49,6 +50,7 @@ const Layout = () => {
             <AuthModal />
 
             {/* <NewsLetter /> */}
+            <MyLoader />
         </Fragment>
     )
 }

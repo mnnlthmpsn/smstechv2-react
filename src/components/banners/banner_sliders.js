@@ -21,7 +21,7 @@ const BannerSliders = () => {
 
     return (
         <div className="mb-2 mb-lg-0">
-            <Slider autoplay={3000}>
+            <Slider autoplay={3000} >
                 {banners.map(banner => (
                     <div key={banner.id}>
                         <figure>

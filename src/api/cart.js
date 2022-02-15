@@ -50,3 +50,12 @@ export const req_update_cart_item = async ( cart_item_id, qty, token) => {
         alert('an eror occured')
     }
 }
+
+export const req_delete_cartitem = async (cart_item_id, token) => {
+    try {
+        return await axios.delete(`${BASE_URL}/cart-items/${cart_item_id}`, { headers: { Authorization: `Bearer ${token}` } })
+    } catch (err) {
+        console.log(err.response)
+        alert('an eror occured')
+    } 
+}
